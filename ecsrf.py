@@ -113,7 +113,7 @@ class BurpExtender(IBurpExtender, IProxyListener, ITab):
         callbacks.setExtensionName(NAME)
 
         def run_scans(event):
-            execfile('C:/Users/Admin/Desktop/autoscanwithburp/RunScans.py')
+            os.system('C:/Users/Admin/Desktop/autoscanwithburp/RunScans.py')
 
         self.home = JPanel(BorderLayout())
     

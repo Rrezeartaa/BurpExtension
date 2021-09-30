@@ -1,0 +1,26 @@
+{
+  "sites" : [{
+      "siteName" : "SEMS",
+      "protocol" : "https",
+      "fqdn" : "notimi.uni-pr.edu",
+      "port" : 443,
+      "path" : "/",
+      "userName" : "test",
+      "password" : "test",
+      "sessionToLoad" : "C:/Users/Admin/sqli-burp-suite/BurpStates/blankburpstate"
+    }
+  ],
+  "fileLocations" : [{
+      "burpJar" : "C:/Users/Admin/Downloads/burpsuite_pro_v2021.7.jar",
+      "reportOutputPath" : "C:\\Users\\Carriero\\Documents\\Tools\\AutomatedScans\\output\\",
+	  "nikto" : "C:\\Users\\Carriero\\Downloads\\nikto-master\\nikto-master\\program\\nikto.pl",
+	  "skipFish" : "C:\\Users\\Carriero\\Downloads\\nikto-master\\nikto-master\\program\\",
+      "skipFishDict" : "C:\\Users\\Carriero\\Downloads\\nikto-master\\nikto-master\\program\\dictionaries\\medium.wl"
+    }
+  ],
+  "burpConfigs" : [{
+      "memory" : "4096m",
+      "headless" : false
+    }
+	]
+  }

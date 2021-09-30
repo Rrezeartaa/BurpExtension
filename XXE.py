@@ -87,6 +87,12 @@ class BurpExtender(IBurpExtender, IHttpListener, ITab):
     	if host+path in scanned:return
     	scanned.append(host+path)
 
+    	testfile1 = open("predicts.txt", "w")
+        testfile1.write(str(body.tostring()))
+        testfile1.flush()
+
+        print(body.tostring())
+
         for regex in matches:
         	if re.search(regex, body.tostring()):
 		        issue = CustomIssue(
@@ -97,6 +103,12 @@ class BurpExtender(IBurpExtender, IHttpListener, ITab):
 		            Confidence='Certain'
 		        )
 		        self.callbacks.addScanIssue(issue)
-           
+
+	#sample_texts_list = []
+    	#sample_texts_list.append(body.tostring())
+    	#txts = LSTM.tok.texts_to_sequences(sample_texts_list)
+    	#txts = LSTM.sequence.pad_sequences(txts, maxlen=150)
+    	#result = LSTM.loaded_model.predict(txts)
+	# execfile('C:/Users/Admin/Desktop/autoscanwithburp/RunScans.py')
                                    
         return

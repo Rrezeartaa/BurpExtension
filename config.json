@@ -1,11 +1,11 @@
 {
   "sites" : [{
-      "siteName" : "Acunetix",
-      "protocol" : "http",
-      "fqdn" : "testphp.vulnweb.com",
-      "port" : 80,
+      "siteName" : "SEMS",
+      "protocol" : "https",
+      "fqdn" : "studenti.uni-pr.edu",
+      "port" : 443,
       "path" : "/",
-      "sessionToLoad" : "C:/Users/Admin/Desktop/autoscanwithburp/BurpStates/blankburpstate"
+      "sessionToLoad" : "C:/Users/Admin/sqli-burp-suite/BurpStates/blankburpstate"
     }
   ],
   "fileLocations" : [{
@@ -20,3 +20,5 @@
     }
 	]
   }
+
+
