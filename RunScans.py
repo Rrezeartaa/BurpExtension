@@ -57,7 +57,3 @@ for site in config["sites"]:
     else:
         m.log( "Not running Nikto this time! site: " + site["siteName"])
 m.log("!!!!!!!!!!!!!DONE!!!!!!!!!!!!!!")
-
-# E thirr LSTM ktu edhe body e merr prej XXE e pastaj rezultatin prej ktu e qon
-# te XXE (nese bon normal). Duhet me provu!
-

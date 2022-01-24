@@ -62,4 +62,3 @@ accuracy=accuracy_score(y_test, y_pred_random)
 precision=precision_score(y_test, y_pred_random, zero_division=1)
 recall=recall_score(y_test, y_pred_random, zero_division=1)
 print(" Accuracy : {0} \n Precision : {1} \n Recall : {2}".format(accuracy, precision, recall))
-

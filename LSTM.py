@@ -23,12 +23,9 @@ import XXE
 
 data= pd.read_csv("./dataset/kaggleDataset/sqliv2/sqliv2.csv",encoding='utf-16')
 
-#krijoni transformimin
 vectorizer = CountVectorizer(min_df=2, max_df=0.7, stop_words=stopwords.words('english')) 
-# thirrni funksionin fit() 
 vectorizer.fit(data['Sentence'].values.astype('U')) # .astype('U') -> konverto ne Unicode   
 print(vectorizer.vocabulary_) 
-# transformoni dokumentin
 vector= vectorizer.transform(data['Sentence'].values.astype('U'))
 posts= vector.toarray()
 
@@ -86,4 +83,3 @@ accuracy=accuracy_score(y_test, y_pred)
 precision=precision_score(y_test, y_pred, zero_division=1)
 recall=recall_score(y_test, y_pred, zero_division=1)
 print(" Accuracy : {0} \n Precision : {1} \n Recall : {2}".format(accuracy, precision, recall))
-

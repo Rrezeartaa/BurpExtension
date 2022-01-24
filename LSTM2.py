@@ -32,7 +32,7 @@ df.head()
 
 df.info()
 
-df.dropna(inplace=True)#to drop out nan values
+df.dropna(inplace=True) # to drop out nan values
 
 X=df['sentence']
 y=df['type']

@@ -64,7 +64,6 @@ X.head()
 
 X_test.info()
 
-
 regressor = GradientBoostingClassifier()
 regressor.fit(X_train, y_train)
 
@@ -72,13 +71,7 @@ y_pred_log_reg=regressor.predict(X_test)
 accuracy_score(y_test, y_pred_log_reg)
 print(y_pred_log_reg)
 
-
 accuracy=accuracy_score(y_test, y_pred_log_reg)
 precision=precision_score(y_test, y_pred_log_reg, zero_division=1)
 recall=recall_score(y_test, y_pred_log_reg, zero_division=1)
 print(" Accuracy : {0} \n Precision : {1} \n Recall : {2}".format(accuracy, precision, recall))
-
-
-
-
-
