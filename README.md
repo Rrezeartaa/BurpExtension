@@ -1,2 +1,2 @@
 # BurpExtension
- 
+This extension is developed for Burp Suite to find vulnerabilities on a website through automated scanning with machine learning. Machine Learning algorithms such as Logistic Regression, Random Forest, Gradient Boosting, and Long Short-Term Memory were applied to this Burp Suite extension. These four algorithms were used to scan for: Cross Site Request Forgery (CSRF), SQL injection (SQLi) and XML External Entity (XXE) vulnerabilities in different websites. especially in university web application for student management. These  four algorithms were tested for their performance with two data sets: with a generated dataset and a Kaggle dataset, where the results showed that the best algorithm is Long Short-Term Memory.
