@@ -62,7 +62,7 @@ class BurpExtender(IBurpExtender, IHttpListener, ITab):
     def registerExtenderCallbacks(self, callbacks):
 	
         self.callbacks = callbacks
-        self.callbacks.setExtensionName("BIT/XML-Finder")
+        self.callbacks.setExtensionName("XML/SQLi Finder")
         self.callbacks.registerHttpListener(self)
 
         sys.stdout = self.callbacks.getStdout()
@@ -87,12 +87,6 @@ class BurpExtender(IBurpExtender, IHttpListener, ITab):
     	if host+path in scanned:return
     	scanned.append(host+path)
 
-    	testfile1 = open("predicts.txt", "w")
-        testfile1.write(str(body.tostring()))
-        testfile1.flush()
-
-        print(body.tostring())
-
         for regex in matches:
         	if re.search(regex, body.tostring()):
 		        issue = CustomIssue(
@@ -104,11 +98,20 @@ class BurpExtender(IBurpExtender, IHttpListener, ITab):
 		        )
 		        self.callbacks.addScanIssue(issue)
 
-	#sample_texts_list = []
-    	#sample_texts_list.append(body.tostring())
-    	#txts = LSTM.tok.texts_to_sequences(sample_texts_list)
-    	#txts = LSTM.sequence.pad_sequences(txts, maxlen=150)
-    	#result = LSTM.loaded_model.predict(txts)
-	# execfile('C:/Users/Admin/Desktop/autoscanwithburp/RunScans.py')
+	sample_texts_list = []
+	sample_texts_list.append(body.tostring())
+	txts = LSTM.tok.texts_to_sequences(sample_texts_list)
+	txts = LSTM.sequence.pad_sequences(txts, maxlen=150)
+	result = LSTM.loaded_model.predict(txts)
+
+	if result > 0.5:
+	    issue = CustomIssue(
+		BasePair = messageInfo,
+		IssueName = 'SQL Injection',
+		IssueDetail = 'The following host is SQLi<br>Check for SQL injection',
+		Severity = 'High',
+		Confidence = 'Certain'
+	    )
+	    self.callbacks.addScanIssue(issue)
                                    
         return
